@@ -1,1 +1,3 @@
 # Dotnetist
+
+- .net vs c#
