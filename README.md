@@ -8,4 +8,4 @@
 ------------------------------------------
 
 1. dead letter queue (hands on)
-2. 
+2. asynchronous vs stream
