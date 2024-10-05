@@ -1,1 +1,1 @@
-# k3d - made some cool app.
+# k3d
