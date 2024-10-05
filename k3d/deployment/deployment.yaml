@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetist-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetist-web
+  template:
+    metadata:
+      labels:
+        app: dotnetist-web
+    spec:
+      containers:
+      - name: dotnetist-web
+        image: algebraburger/dotnetist-web:v1
+        ports:
+        - containerPort: 80 # Change this if your app runs on a different port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnetist-web-service
+spec:
+  type: LoadBalancer # Changed from NodePort to LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: dotnetist-web
