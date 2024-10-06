@@ -38,10 +38,16 @@ docker build -t algebraburger/dotnetist-web:v1 .
 docker login
 docker push algebraburger/dotnetist-web:v1
 ```
+# redeployment
+```
+k3d cluster delete vwx-cluster
+k3d cluster create vwx-cluster
+kubectl apply -f deployment.yaml
+kubectl get service dotnetist-web-service
+```
 
 ```
 kubectl apply -f deployment.yaml
-
 kubectl get service dotnetist-web-service
 ```
 
