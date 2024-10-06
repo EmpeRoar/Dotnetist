@@ -27,6 +27,8 @@ k3d cluster delete vwx-cluster
 
 k3d cluster list
 
+kubectl cluster-into
+
 
 ```
 
