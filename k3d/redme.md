@@ -20,6 +20,16 @@ k3d cluster delete vwx-cluster
 https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 ```
 
+```
+k3d cluster create vwx-cluster
+
+k3d cluster delete vwx-cluster
+
+k3d cluster list
+
+
+```
+
 # docker
 ```
 docker build -t algebraburger/dotnetist-web:v1 .
