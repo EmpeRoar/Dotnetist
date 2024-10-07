@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "S0LKu3kGQWGgmwNPyEHzsnO1zeo7m2MIsofVYRNkyM4=",
+  "Source": "dotnetist-api",
+  "BasePath": "_content/dotnetist-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
