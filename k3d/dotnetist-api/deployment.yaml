@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetist-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetist-api
+  template:
+    metadata:
+      labels:
+        app: dotnetist-api
+    spec:
+      containers:
+      - name: dotnetist-api
+        image: algebraburger/dotnetist-api:v0.0.2 # Use the same version as in your docker run command
+        ports:
+        - containerPort: 8080 # Match the exposed container port in docker run
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnetist-api-service
+spec:
+  type: NodePort
+  ports:
+    - port: 80            # Match the host port from docker run
+      targetPort: 8080    # Match the container port in the deployment
+      nodePort: 31001     # You can keep this or change based on your configuration
+  selector:
+    app: dotnetist-api

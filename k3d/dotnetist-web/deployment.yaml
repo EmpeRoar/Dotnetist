@@ -23,9 +23,11 @@ kind: Service
 metadata:
   name: dotnetist-web-service
 spec:
-  type: LoadBalancer # Changed from NodePort to LoadBalancer
+  # type: LoadBalancer # Changed from NodePort to LoadBalancer
+  type: NodePort
   ports:
     - port: 80
       targetPort: 80
+      nodePort: 31002
   selector:
     app: dotnetist-web
