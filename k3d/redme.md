@@ -62,3 +62,8 @@ dotnetist-web-service   LoadBalancer   10.43.54.233   172.22.0.2    80:31705/TCP
 
 http://172.22.0.2:31705
 
+
+
+```
+https://hackernoon.com/how-to-deploy-apps-to-a-local-k3d-cluster
+```
