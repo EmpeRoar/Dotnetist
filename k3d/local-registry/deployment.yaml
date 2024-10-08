@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetist-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetist-web
+  template:
+    metadata:
+      labels:
+        app: dotnetist-web
+    spec:
+      containers:
+      - name: dotnetist-web
+        # Use the image from your local registry
+        image: k3d-vwx-registry:5050/dotnetist-web:v0.6.0  # Change to the correct registry format
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnetist-web-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: dotnetist-web

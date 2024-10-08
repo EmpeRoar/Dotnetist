@@ -67,3 +67,41 @@ http://172.22.0.2:31705
 ```
 https://hackernoon.com/how-to-deploy-apps-to-a-local-k3d-cluster
 ```
+
+
+```
+docker build -t dotnetist-web-local:latest .
+k3d registry create vwx-registry --port 5050
+```
+
+
+
+```
+
+k3d cluster create vwx-cluster --port "9900:80@loadbalancer" --registry-use k3d-vwx-registry:5050 --registry-config registries.yaml
+
+```
+
+```
+
+docker tag dotnetist-web-local:latest localhost:5050/dotnetist-web-local:v0.0.1
+
+docker push localhost:5050/dotnetist-web-local:v0.0.1
+
+
+kubectl create deployment dotnetist-web-server --image=k3d-vwx-registry:5050/dotnetist-web-local:v0.0.1
+
+
+kubectl create service clusterip dotnetist-web-server --tcp=9091:9091
+# kubectl create service loadbalancer dotnetist-web-server --tcp=9091:9091
+
+kubectl apply -f .\ingress.yaml
+```
+
+## UPDATE
+```
+
+
+
+
+```
