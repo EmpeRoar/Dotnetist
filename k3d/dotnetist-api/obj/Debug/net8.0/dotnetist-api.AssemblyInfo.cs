@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnetist-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c5f36932952e8e9091e3a1edc4bc5e22ac42f95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13a320d2e14ff91ffcf0da281369afc606a62878")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnetist-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnetist-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
