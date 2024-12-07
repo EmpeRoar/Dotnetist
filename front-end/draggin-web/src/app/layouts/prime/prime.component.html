@@ -1,0 +1,18 @@
+<div
+  class="side-menu"
+  [class.open]="isMenuOpened"
+  [ngStyle]="{ width: menuWidth + 'px' }"
+  (mousedown)="onMouseDown($event)"
+>
+  <div class="menu-content">
+    <app-sidemenu></app-sidemenu>
+  </div>
+</div>
+
+<div class="content">
+  <div class="drag-handle" (mousedown)="onDragStart($event)"></div>
+  <div class="main-content">
+    <button (click)="toggleMenu()">Toggle Menu</button>
+    <p>Main content goes here</p>
+  </div>
+</div>

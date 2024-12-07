@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .side-menu {
+    background-color: #333;
+    color: #fff;
+    height: 100%;
+    transition: width 0.3s;
+    overflow: hidden;
+  }
+  
+  .side-menu.open {
+    width: 250px;
+  }
+  
+  .menu-content {
+    padding: 20px;
+  }
+  
+  .content {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .drag-handle {
+    width: 10px;
+    cursor: ew-resize;
+    background-color: #ccc;
+  }
+  
+  .main-content {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #f4f4f4;
+  }
+  
