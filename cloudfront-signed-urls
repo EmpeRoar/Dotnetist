@@ -1,0 +1,29 @@
+Suggestions to Further Secure the Documents on CloudFront
+Use Signed URLs or Signed Cookies for CloudFront:
+
+Implement signed URLs or cookies in CloudFront to restrict access to authorized users and requests.
+The API can generate these signed URLs/cookies with a short expiration time and provide them to the frontend, ensuring that only valid users can download the documents.
+Restrict CloudFront Access to Specific Origin(s):
+
+Configure an origin access identity (OAI) in CloudFront to ensure that only your API servers can retrieve content from the CloudFront distribution.
+This prevents unauthorized access to the documents via CloudFront directly.
+Add Authentication and Authorization:
+
+Enforce strong authentication at the API level (e.g., OAuth2, JWT) to ensure that only authorized users can request documents.
+Validate the user's permissions before generating a signed URL or retrieving a document.
+Use Encrypted Storage and Transit:
+
+Ensure that the documents are encrypted both at rest (e.g., using S3 bucket encryption) and in transit (e.g., using HTTPS).
+Monitor and Log Access:
+
+Use CloudFront and API logs to monitor document access patterns. Identify and block any suspicious activities.
+Rate Limiting and DDoS Protection:
+
+Implement rate limiting at the API level to prevent abuse.
+Use AWS Shield or WAF to protect the CloudFront distribution from DDoS attacks.
+Expire and Revalidate Document Access:
+
+Consider implementing a mechanism where the API verifies document access rights on each request, ensuring that users cannot reuse signed URLs indefinitely.
+Front-End Best Practices:
+
+Minimize exposure of sensitive data (e.g., encrypted document IDs) in the frontend by obfuscating or adding an additional layer of authorization.
